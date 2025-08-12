@@ -1,0 +1,152 @@
+/* About Section Styles */
+.about {
+    padding: 6rem 5%;
+    background: var(--light-gray);
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.founder-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.founder-info {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.founder-image {
+    text-align: center;
+}
+
+.founder-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.founder-photo:hover {
+    transform: scale(1.05);
+}
+
+.founder-text h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.founder-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.founder-bio {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.founder-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.company-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.company-intro {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.company-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.value-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+    .founder-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .founder-image i {
+        font-size: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 4rem 1.5rem;
+    }
+
+    .founder-section,
+    .company-section {
+        padding: 2rem;
+    }
+
+    .founder-quote {
+        font-size: 1.1rem;
+    }
+
+    .company-intro {
+        font-size: 1rem;
+    }
+}
