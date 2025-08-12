@@ -51,9 +51,9 @@
                     <div class="info-card">
                         <i class="fas fa-clock"></i>
                         <h3>Business Hours</h3>
-                        <p>Monday - Friday: 9am - 6pm</p>
-                        <p>Saturday: 10am - 4pm</p>
-                        <p>Sunday: Closed</p>
+                        <p>Monday - Friday: 9am - 2pm</p>
+                        <p>Saturday: 9am - 5pm</p>
+                        <p>Sunday: 9am - 7pm</p>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                 <div class="faq-grid">
                     <div class="faq-item">
                         <h3>What are your business hours?</h3>
-                        <p>Our standard business hours are Monday to Friday, 9am to 6pm, and Saturday 10am to 4pm. We're closed on Sundays. Emergency support is available 24/7 for our Professional and Enterprise plan customers.</p>
+                        <p>Our standard business hours are Monday to Friday, 9am to 2pm, and Saturday 9am to 5pm. Sunday 9am to 7pm.</p>
                     </div>
                     <div class="faq-item">
                         <h3>How quickly will you respond to my inquiry?</h3>
@@ -191,19 +191,32 @@
         </div>
     </footer>
 
-    <script>
-        // Form submission handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! We will get back to you shortly.');
-            this.reset();
-        });
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your Public Key
+    (function(){
+        emailjs.init("gMpIlO-TtutA5J-pI"); // Replace with your actual EmailJS Public Key
+    })();
 
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Send form using EmailJS
+        emailjs.sendForm('service_l27vh5b', 'YOUR_TEMPLATE_ID', this)
+        .then(function() {
+            alert('✅ Thank you for your message! We will get back to you shortly.');
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            alert('❌ Oops! Something went wrong: ' + JSON.stringify(error));
         });
-    </script>
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
